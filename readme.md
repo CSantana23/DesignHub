@@ -8,6 +8,11 @@ Set up Homestead:
 ```
 www.designhub.com
 ```
+Run up Vagrant:
+```
+vagrant reload --provision
+vagrant ssh
+```
 Get into Laravel:
 ```
 cp .env.example .env ##set up environment

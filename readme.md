@@ -6,7 +6,11 @@ git clone .....
 ```
 Set up Homestead:
 ```
-www.designhub.com
+- map: ~/DesignHub                 ##folders
+   to: /home/vagrant/DesignHub
+   
+- map: www.DesignHub.com           ##sites
+   to: /home/vagrant/DesignHub/public
 ```
 Run up Vagrant:
 ```

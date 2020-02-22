@@ -6,7 +6,17 @@ git clone .....
 ```
 Set up Homestead:
 ```
-www.designhub.com
+- map: ~/DesignHub                 ##folders
+   to: /home/vagrant/DesignHub
+   
+- map: www.DesignHub.com           ##sites
+   to: /home/vagrant/DesignHub/public
+```
+Set up host: 
+```
+cd /etc
+sudo vim hosts
+192.168.**.** www.DesignHub.com
 ```
 Run up Vagrant:
 ```
@@ -30,3 +40,8 @@ DB_DATABASE=designhub
 DB_USERNAME=root
 DB_PASSWORD=
 ```
+PHP 7.4 not compatitable problem:
+```
+nginx
+```
+

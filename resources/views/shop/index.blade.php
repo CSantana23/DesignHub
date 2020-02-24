@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Shop
+    Design Hub
 @endsection
 
 @section('content')
@@ -19,7 +19,7 @@
                             </p>
                             <div class="clearfix">
                                 <div class="pull-left price">$ {{ $product->price }}</div>
-                                <a href="#" class="btn btn-success pull-right" role="button">Add to cart</a>
+                                <a href="{{ route('addCart', ['id'=>$product->id]) }}" class="btn btn-success pull-right" role="button">Add to cart</a>
                             </div>
                         </div>
                     </div>

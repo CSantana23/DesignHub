@@ -9,6 +9,9 @@
         <div class="col-md-8" style="margin-left: 50px; padding: 50px">
             <h1 style="margin-left: 20px; padding-bottom: 20px">Checkout</h1>
             <h4>Total: ${{ $total }}.00</h4>
+            <div id="charge-error" class="alert alert-danger" {{!\Illuminate\Support\Facades\Session::has('error')? 'hidden':''}}>
+                {{ \Illuminate\Support\Facades\Session::get('error') }}
+            </div>
             <form action="{{route('checkout')}}" method="Post" id="payment-form">
                 @csrf
                 <div class="row">

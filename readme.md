@@ -1,5 +1,7 @@
 ![Image of DesignHub](https://github.com/Mira-Qiu/Laravel-Shopping-platform/blob/master/image/Screen%20Shot%202020-02-19%20at%2011.22.00%20AM.png)
-
+![frontPage](https://github.com/Mira-Qiu/DesignHub/blob/master/image/frontPage.png)
+![cartPage](https://github.com/Mira-Qiu/DesignHub/blob/master/image/cartPage.png)
+![checkout](https://github.com/Mira-Qiu/DesignHub/blob/master/image/checkout.png)
 Clone code first:
 ```
 git clone .....

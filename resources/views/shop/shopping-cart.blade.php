@@ -12,17 +12,19 @@
                 <ul class="list-group">
                     @foreach($products as $product)
                         <li class="list-group-item">
-                            <strong>{{ $product['item']['title'] }}</strong>
-                            <span class="badge badge-success" style="font-size: 14px; font-weight: bold">  x {{$product['qty']}}   </span>
-{{--                            <span class="label label-success">${{$product['price']}}.00</span>--}}
+                           <span class="price"> {{ $product['item']['title'] }}</span>
                             <div class="btn-group pull-right">
-                                <button class="btn btn-info btn-xs dropdown-toggle" data-toggle="dropdown">Action
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Reduce by 1</a></li>
-                                    <li><a href="#">Reduce All</a></li>
-                                </ul>
+                                <a href="{{ route('addCart', ['id'=>$product['item']->id]) }}">
+                                    <i  class="fa fa-plus-circle fa-2x" aria-hidden="true"> </i>
+                                </a>
+                                <span class="price"> &nbsp;&nbsp;{{$product['qty']}}&nbsp;&nbsp; </span>
+                                <a  href="#">
+                                    <i  class="fa fa-minus-circle fa-2x" aria-hidden="true"> </i>
+                                </a>
+                                <span class="price">&nbsp;&nbsp;${{$product['price']}}.00&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                <a  href="#">
+                                    <i  class="fa fa-times fa-2x" aria-hidden="true" style="color:gray"> </i>
+                                </a>
                             </div>
                         </li>
                         @endforeach
@@ -30,11 +32,11 @@
             </div>
         </div>
         <div class="row" style="margin-left: 100px">
-            <div class="col-sm-6 col-md-6 ">
+            <div class="col-sm-8 col-md-6 ">
                 <h4>Total: $ {{$totalPrice}}.00</h4>
             </div>
             <hr>
-            <div class="col-sm-6 col-md-6">
+            <div class="col-sm-8 col-md-6 pull-right">
                 <a href="{{ route('checkout') }}" type="button" class="btn btn-success" style="font-size: 16px">Checkout</a>
             </div>
         </div>

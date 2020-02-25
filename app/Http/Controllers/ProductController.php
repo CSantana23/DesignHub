@@ -4,16 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Cart;
 use App\Product;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Session;
+use Illuminate\View\View;
 
 class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Factory|View
      */
     public function index()
     {
@@ -29,7 +31,7 @@ class ProductController extends Controller
 
         $request->session()->put('cart', $cart);
 //        dd($request->session()->get('cart')->totalQty);
-        return redirect()->route('index');
+        return redirect()->back();
     }
 
     public function getCart(){

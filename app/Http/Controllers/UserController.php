@@ -2,19 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\WelcomeMail;
 use App\User;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\ValidationException;
+use Illuminate\View\View;
 
+/**
+ * Class UserController
+ * @package App\Http\Controllers
+ */
 class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Factory|View
      */
     public function index()
     {
@@ -41,6 +49,9 @@ class UserController extends Controller
         ]);
 
         $user->save();
+
+        Mail::to($user->email)->send(new WelcomeMail());
+
         Auth::login($user);
         return redirect()->route('profile');
 

@@ -15,6 +15,13 @@
 //Route::resource('/post','PostsController');
 
 //Route::get('/',['uses'=>'ProductController@index', 'as'=>'product.index']);
+Route::get('/image','ImageController@create');
+Route::post('/image','ImageController@store');
+Route::post('/image/download/{image}','ImageController@download');
+Route::get('/image/{image}','ImageController@show');
+
+
+
 Route::resource('/', 'ProductController');
 Route::get('/add-to-cart/{id}',['uses'=>'ProductController@addToCart', 'as'=>'addCart']);
 Route::get('/shoppingCart',['uses'=>'ProductController@getCart', 'as'=>'shoppingCart']);
@@ -33,3 +40,5 @@ Route::group(['prefix' => 'user'], function () {
         Route::get('/logout', ['uses' => 'UserController@getLogout', 'as' => 'logout']);
     });
 });
+
+

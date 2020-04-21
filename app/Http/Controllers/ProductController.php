@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Cart;
 use App\Product;
+use App\User;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\View\View;
 
@@ -30,7 +32,6 @@ class ProductController extends Controller
         $cart->add($product, $id);
 
         $request->session()->put('cart', $cart);
-//        dd($request->session()->get('cart')->totalQty);
         return redirect()->back();
     }
 
@@ -41,19 +42,5 @@ class ProductController extends Controller
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
         return view('shop.shopping-cart',['products'=>$cart->items,'totalPrice'=>$cart->totalPrice]);
-    }
-
-    public function getCheckout(){
-            if(!Session::has('cart')){
-                return view('shop.shopping-cart');
-            }
-            $oldCart = Session::get('cart');
-            $cart = new Cart($oldCart);
-            $total = $cart->totalPrice;
-            return view('shop.checkout', compact('total'));
-    }
-
-    public function postCheckout(){
-     //
     }
 }

@@ -6,9 +6,11 @@
         <h1>Sign Up</h1>
         @if(count($errors) > 0)
             <div class="alert alert-danger">
-                @foreach($errors as $error)
-                    <p>{{$error}}</p>
+                <ul>
+                    @foreach($errors as $error)
+                        <li>{{$error}}</li>
                     @endforeach
+                </ul>
             </div>
             @endif
         <form action="{{ route('signup.index') }}" method="post">

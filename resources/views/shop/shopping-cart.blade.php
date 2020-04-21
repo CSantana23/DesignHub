@@ -37,7 +37,8 @@
             </div>
             <hr>
             <div class="col-sm-8 col-md-6 pull-right">
-                <a href="{{ route('checkout') }}" type="button" class="btn btn-success" style="font-size: 16px">Checkout</a>
+                <a href="{{ url('/') }}" type="button" class="btn btn-success" style="font-size: 16px">Continue Shopping</a>
+                <a href="{{ route('checkout.index') }}" type="button" class="btn btn-success" style="font-size: 16px">Checkout</a>
             </div>
         </div>
     @else

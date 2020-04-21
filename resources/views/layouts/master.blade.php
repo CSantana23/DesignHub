@@ -9,6 +9,7 @@
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ URL::to('css/app.css') }}" />
     @yield('styles')
+    @yield('extra-css')
 </head>
 <body>
 @include('partials.header')

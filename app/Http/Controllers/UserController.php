@@ -19,6 +19,10 @@ use Illuminate\View\View;
  */
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['only' => ['edit', 'update']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -28,7 +32,6 @@ class UserController extends Controller
     {
         return view('user/signup');
     }
-
 
     /**
      * Store a newly created resource in storage.
@@ -50,9 +53,9 @@ class UserController extends Controller
 
         $user->save();
 
-        Mail::to($user->email)->send(new WelcomeMail());
+//        Mail::to($user->email)->send(new WelcomeMail());
 
-        Auth::login($user);
+//        Auth::login($user);
         return redirect()->route('profile');
 
     }

@@ -52,6 +52,12 @@ Route::get('/thankyou','CheckoutController@getThankYou');
 Route::get('/payment', 'PaymentController@index');
 Route::post('/charge', 'PaymentController@charge');
 
+//seller order integration
+Route::get('/seller','SellerController@index');
+Route::get('/createshippinglabel','SellerController@createShippingLabel');
+Route::get('/generateTracking','SellerController@generateTracking');
+Route::get('/email','SellerController@sendNotification');
+
 
 
 

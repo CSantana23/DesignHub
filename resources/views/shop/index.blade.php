@@ -7,7 +7,7 @@
 @section('content')
         <div class="row">
             @foreach($products as $product)
-                <div class="col-sm-6 col-md-4 m-3">
+                <div class="col-sm-4">
                     <div class="thumbnail border rounded p-4">
                         <img
                             src="{{$product->imagePath}}"

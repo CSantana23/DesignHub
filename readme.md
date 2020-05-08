@@ -1,6 +1,7 @@
-<h5>Designhub YouTube Demo</h5><br>
+Designhub YouTube Demo
 [![Designhub Demo](https://github.com/Mira-Qiu/DesignHub/blob/master/image/homepage.png)](https://www.youtube.com/watch?v=xgqK5kJ85OA&t=42s "Designhub Demo")
-<br><h5>Designhub Page</h5><br>
+
+Designhub Screenshot
 ![Image of DesignHub](https://github.com/Mira-Qiu/Laravel-Shopping-platform/blob/master/image/Screen%20Shot%202020-02-19%20at%2011.22.00%20AM.png)
 ![frontPage](https://github.com/Mira-Qiu/DesignHub/blob/master/image/frontPage.png)
 ![cartPage](https://github.com/Mira-Qiu/DesignHub/blob/master/image/cartPage.png)
